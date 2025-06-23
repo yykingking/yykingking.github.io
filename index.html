@@ -1,1 +1,131 @@
-<div>Hello World ~~~~ yykingking </div>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小小数学家 - 一年级数学学习</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <div id="app">
+        <!-- 加载屏幕 -->
+        <div id="loading-screen" class="loading-screen">
+            <div class="loading-content">
+                <div class="loading-logo">🧮</div>
+                <h2>小小数学家</h2>
+                <div class="loading-bar">
+                    <div class="loading-progress"></div>
+                </div>
+                <p>正在准备你的数学冒险...</p>
+            </div>
+        </div>
+
+        <!-- 主菜单 -->
+        <div id="main-menu" class="screen hidden">
+            <header class="app-header">
+                <h1 class="app-title">
+                    <span class="title-icon">🧮</span>
+                    小小数学家
+                </h1>
+                <div class="user-info">
+                    <div class="stars-count">⭐ <span id="total-stars">0</span></div>
+                    <div class="level-badge">Lv.<span id="user-level">1</span></div>
+                </div>
+            </header>
+
+            <nav class="main-nav">
+                <button class="nav-btn" data-module="numbers">
+                    <div class="btn-icon">🔢</div>
+                    <h3>数字认知</h3>
+                    <p>学习1-20的数字</p>
+                </button>
+
+                <button class="nav-btn" data-module="arithmetic">
+                    <div class="btn-icon">➕</div>
+                    <h3>加减法</h3>
+                    <p>10以内加减运算</p>
+                </button>
+
+                <button class="nav-btn" data-module="shapes">
+                    <div class="btn-icon">🔺</div>
+                    <h3>图形认知</h3>
+                    <p>认识基本图形</p>
+                </button>
+
+                <button class="nav-btn" data-module="comparison">
+                    <div class="btn-icon">⚖️</div>
+                    <h3>比较概念</h3>
+                    <p>大小多少比较</p>
+                </button>
+
+                <button class="nav-btn" data-module="games">
+                    <div class="btn-icon">🎮</div>
+                    <h3>趣味游戏</h3>
+                    <p>寓教于乐的游戏</p>
+                </button>
+
+                <button class="nav-btn" data-module="achievements">
+                    <div class="btn-icon">🏆</div>
+                    <h3>成就中心</h3>
+                    <p>查看学习成果</p>
+                </button>
+            </nav>
+
+            <footer class="app-footer">
+                <button id="parent-btn" class="parent-btn">👨‍👩‍👧‍👦 家长中心</button>
+            </footer>
+        </div>
+
+        <!-- 学习模块容器 -->
+        <div id="module-container" class="module-container hidden">
+            <header class="module-header">
+                <button id="back-btn" class="back-btn">← 返回</button>
+                <h2 id="module-title">学习模块</h2>
+                <div class="module-progress">
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
+                    <span id="progress-text">0/10</span>
+                </div>
+            </header>
+            <main id="module-content" class="module-content">
+                <!-- 动态加载学习内容 -->
+            </main>
+        </div>
+
+        <!-- 家长中心 -->
+        <div id="parent-center" class="screen hidden">
+            <header class="module-header">
+                <button id="parent-back-btn" class="back-btn">← 返回</button>
+                <h2>家长中心</h2>
+            </header>
+            <div id="parent-content" class="parent-content">
+                <!-- 家长功能内容 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 音效控制 -->
+    <div class="audio-controls">
+        <button id="audio-toggle" class="audio-btn">🔊</button>
+    </div>
+
+    <!-- 提示消息 -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- 脚本文件 -->
+    <script src="js/utils/storage.js"></script>
+    <script src="js/utils/audio.js"></script>
+    <script src="js/utils/animation.js"></script>
+    <script src="js/core/app.js"></script>
+    <script src="js/modules/numbers.js"></script>
+    <script src="js/modules/arithmetic.js"></script>
+    <script src="js/modules/shapes.js"></script>
+    <script src="js/modules/comparison.js"></script>
+    <script src="js/modules/games.js"></script>
+    <script src="js/modules/achievements.js"></script>
+    <script src="js/modules/parent.js"></script>
+    <script src="js/core/main.js"></script>
+</body>
+</html>
